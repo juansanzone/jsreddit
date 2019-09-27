@@ -85,8 +85,15 @@
                         <color key="textColor" red="0.80437010529999997" green="0.53723329310000001" blue="0.21949774029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32M-DR-ISo">
+                        <rect key="frame" x="0.0" y="168.5" width="127.5" height="38"/>
+                        <connections>
+                            <action selector="didTapOnDismissPost" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LeR-8m-uju"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="32M-DR-ISo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="1Fh-p7-xLb"/>
                     <constraint firstItem="Kl8-sM-2Lw" firstAttribute="top" secondItem="h8e-eU-Udg" secondAttribute="bottom" constant="8" id="3lv-RV-T17"/>
                     <constraint firstAttribute="trailing" secondItem="AuU-Kh-PUq" secondAttribute="trailing" constant="16" id="3w4-9I-upk"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Bv-vg-d3K" secondAttribute="trailing" constant="16" id="4Sn-PR-J3x"/>
@@ -97,19 +104,31 @@
                     <constraint firstItem="M4x-Tn-la9" firstAttribute="centerY" secondItem="SmW-Un-reG" secondAttribute="centerY" id="AzZ-HL-8LV"/>
                     <constraint firstItem="AuU-Kh-PUq" firstAttribute="top" secondItem="Kl8-sM-2Lw" secondAttribute="top" constant="-1" id="EiP-k7-DA3"/>
                     <constraint firstItem="SmW-Un-reG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AuU-Kh-PUq" secondAttribute="bottom" constant="12" id="HJn-Te-47K"/>
+                    <constraint firstItem="32M-DR-ISo" firstAttribute="trailing" secondItem="M4x-Tn-la9" secondAttribute="trailing" constant="8" id="IuQ-5O-jbh"/>
                     <constraint firstItem="4Bv-vg-d3K" firstAttribute="leading" secondItem="h8e-eU-Udg" secondAttribute="trailing" constant="8" id="Jfd-CE-LVy"/>
                     <constraint firstItem="M4x-Tn-la9" firstAttribute="leading" secondItem="SmW-Un-reG" secondAttribute="trailing" constant="8" id="K2B-jc-sBK"/>
                     <constraint firstItem="Kl8-sM-2Lw" firstAttribute="leading" secondItem="cyg-d1-KQ2" secondAttribute="leading" id="P4T-fc-YhX"/>
+                    <constraint firstAttribute="bottom" secondItem="32M-DR-ISo" secondAttribute="bottom" constant="2" id="SCf-dS-DkN"/>
                     <constraint firstItem="4Bv-vg-d3K" firstAttribute="centerY" secondItem="h8e-eU-Udg" secondAttribute="centerY" id="Wib-Yq-vqS"/>
                     <constraint firstItem="6vP-Wh-arP" firstAttribute="leading" secondItem="M4x-Tn-la9" secondAttribute="trailing" constant="24" id="WtF-tY-gno"/>
                     <constraint firstItem="h8e-eU-Udg" firstAttribute="top" secondItem="cyg-d1-KQ2" secondAttribute="top" id="cpC-XD-6rq"/>
                     <constraint firstItem="SmW-Un-reG" firstAttribute="leading" secondItem="Kl8-sM-2Lw" secondAttribute="leading" id="dW6-9R-kEU"/>
+                    <constraint firstItem="SmW-Un-reG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Kl8-sM-2Lw" secondAttribute="bottom" constant="16" id="jiC-5U-CWN"/>
                     <constraint firstItem="h8e-eU-Udg" firstAttribute="leading" secondItem="cyg-d1-KQ2" secondAttribute="trailing" constant="8" id="jxz-Zb-R5h"/>
+                    <constraint firstItem="32M-DR-ISo" firstAttribute="top" secondItem="SmW-Un-reG" secondAttribute="top" constant="-8" id="qJ5-fF-42W"/>
                     <constraint firstItem="AuU-Kh-PUq" firstAttribute="leading" secondItem="Kl8-sM-2Lw" secondAttribute="trailing" constant="8" id="rid-xs-uAW"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="authorLabel" destination="h8e-eU-Udg" id="mkc-GO-fM7"/>
+                <outlet property="commentsCountLabel" destination="6vP-Wh-arP" id="lFv-Qv-9Bj"/>
+                <outlet property="postImage" destination="Kl8-sM-2Lw" id="Ixy-1A-aOd"/>
+                <outlet property="postText" destination="AuU-Kh-PUq" id="UbJ-fU-gdv"/>
+                <outlet property="timeAgoLabel" destination="4Bv-vg-d3K" id="Id8-c5-Qjk"/>
+                <outlet property="unReadIndicator" destination="cyg-d1-KQ2" id="4Pu-nt-UnW"/>
+            </connections>
             <point key="canvasLocation" x="228.80000000000001" y="228.03598200899552"/>
         </tableViewCell>
     </objects>

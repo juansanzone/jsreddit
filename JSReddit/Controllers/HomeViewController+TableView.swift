@@ -11,11 +11,13 @@ import UIKit
 // MARK: TableView protocols.
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel.getPosts().count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let targetCell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.reuseIdentifier, for: indexPath) as? PostTableViewCell {
+            let targetPost = viewModel.getPosts()[indexPath.item]
+            targetCell.setupCell(targetPost)
             return targetCell
         }
         return UITableViewCell()

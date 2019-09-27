@@ -9,8 +9,17 @@
 import UIKit
 
 final class HomeViewController: UIViewController {
+    // MARK: Outlets.
     @IBOutlet weak var postsTableView: UITableView!
 
+    // MARK: Definitions.
+    internal var viewModel = PostViewModel() {
+        didSet {
+            postsTableView.reloadData()
+        }
+    }
+
+    // MARK: Lifecycle.
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -20,7 +29,7 @@ final class HomeViewController: UIViewController {
 // MARK: Setup methods.
 private extension HomeViewController {
     func setupTableView() {
-        let estimatedRowHeight: CGFloat = 300
+        let estimatedRowHeight: CGFloat = 400
         postsTableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.reuseIdentifier)
         postsTableView.register(UINib(nibName: PostTableViewCell.xibName, bundle: nil), forCellReuseIdentifier: PostTableViewCell.reuseIdentifier)
         postsTableView.estimatedRowHeight = estimatedRowHeight
