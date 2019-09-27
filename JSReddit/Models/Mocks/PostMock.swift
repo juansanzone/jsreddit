@@ -9,6 +9,10 @@
 import Foundation
 
 final class PostMock1: NSObject, PostViewModelProtocol {
+    func postId() -> String {
+        return "1"
+    }
+
     func isReaded() -> Bool {
         return false
     }
@@ -35,6 +39,10 @@ final class PostMock1: NSObject, PostViewModelProtocol {
 }
 
 final class PostMock2: NSObject, PostViewModelProtocol {
+    func postId() -> String {
+        return "2"
+    }
+
     func isReaded() -> Bool {
         return true
     }
@@ -61,6 +69,10 @@ final class PostMock2: NSObject, PostViewModelProtocol {
 }
 
 final class PostMock3: NSObject, PostViewModelProtocol {
+    func postId() -> String {
+        return "3"
+    }
+
     func isReaded() -> Bool {
         return false
     }

@@ -18,6 +18,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if let targetCell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.reuseIdentifier, for: indexPath) as? PostTableViewCell {
             let targetPost = viewModel.getPosts()[indexPath.item]
             targetCell.setupCell(targetPost)
+            targetCell.setUserInteractionProtocol(self)
             return targetCell
         }
         return UITableViewCell()

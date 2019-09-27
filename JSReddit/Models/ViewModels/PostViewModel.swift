@@ -9,8 +9,23 @@
 import Foundation
 
 struct PostViewModel {
-    private let posts: [PostViewModelProtocol] = [PostMock1(), PostMock2(), PostMock3()]
+    private var posts: [PostViewModelProtocol] = [PostMock1(), PostMock2(), PostMock3()]
+
     func getPosts() -> [PostViewModelProtocol] {
         return posts
+    }
+
+    @discardableResult
+    mutating func remove(_ post: PostViewModelProtocol) -> PostViewModel {
+        if let targetIndex = posts.firstIndex(where: {$0 === post}) {
+            posts.remove(at: targetIndex)
+        }
+        return self
+    }
+
+    @discardableResult
+    mutating func removeAll() -> PostViewModel {
+        posts.removeAll()
+        return self
     }
 }
