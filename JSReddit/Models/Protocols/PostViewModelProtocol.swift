@@ -9,6 +9,7 @@
 import Foundation
 
 protocol PostViewModelProtocol: NSObjectProtocol {
+    func postId() -> String
     func isReaded() -> Bool
     func authorUserName() -> String
     func timeAgo() -> String

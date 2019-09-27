@@ -8,10 +8,17 @@
 
 import UIKit
 
+
+protocol PostCellInteractionProtocol: NSObjectProtocol {
+    func shouldDismissPost(_ post: PostViewModelProtocol)
+}
+
 final class PostTableViewCell: UITableViewCell {
     // MARK: Definitions.
     static let reuseIdentifier: String = "postCell"
     static let xibName: String = "PostTableViewCell"
+    private weak var model: PostViewModelProtocol?
+    private weak var userInteractionProtocol: PostCellInteractionProtocol?
 
     // MARK: Outlets.
     @IBOutlet weak var unReadIndicator: UIView!
@@ -20,6 +27,7 @@ final class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postText: UILabel!
     @IBOutlet weak var commentsCountLabel: UILabel!
+
 
     // MARK: Lifecycle.
     override func prepareForReuse() {
@@ -31,6 +39,7 @@ final class PostTableViewCell: UITableViewCell {
 // MARK: Public methods.
 extension PostTableViewCell {
     func setupCell(_ viewModel: PostViewModelProtocol) {
+        model = viewModel
         postImage.contentMode = .scaleAspectFill
         postImage.setRemoteImage(imageUrl: viewModel.imageUrl())
         unReadIndicator.isHidden = viewModel.isReaded()
@@ -39,11 +48,17 @@ extension PostTableViewCell {
         postText.text = viewModel.postText()
         commentsCountLabel.text = "\(viewModel.commentsCount()) comments"
     }
+
+    func setUserInteractionProtocol( _ iProtocol: PostCellInteractionProtocol) {
+        userInteractionProtocol = iProtocol
+    }
 }
 
 // MARK: User Actions.
 private extension PostTableViewCell {
     @IBAction func didTapOnDismissPost() {
-        print("didTapOnDismissPost")
+        if let targetPost = model {
+            userInteractionProtocol?.shouldDismissPost(targetPost)
+        }
     }
 }

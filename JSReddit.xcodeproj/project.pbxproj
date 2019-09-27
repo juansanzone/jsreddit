@@ -19,6 +19,7 @@
 		239951DF233EB63F00AD2675 /* PostMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951DE233EB63F00AD2675 /* PostMock.swift */; };
 		239951E2233EB81200AD2675 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951E1233EB81200AD2675 /* PostViewModel.swift */; };
 		239951E8233EBD0500AD2675 /* RemoteImage+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951E7233EBD0500AD2675 /* RemoteImage+UIImageView.swift */; };
+		239951EA233EC19700AD2675 /* HomeViewController+InteractionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951E9233EC19700AD2675 /* HomeViewController+InteractionProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		239951DE233EB63F00AD2675 /* PostMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMock.swift; sourceTree = "<group>"; };
 		239951E1233EB81200AD2675 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		239951E7233EBD0500AD2675 /* RemoteImage+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RemoteImage+UIImageView.swift"; sourceTree = "<group>"; };
+		239951E9233EC19700AD2675 /* HomeViewController+InteractionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+InteractionProtocol.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				239951C9233E9A2900AD2675 /* HomeViewController.swift */,
 				239951D7233EA70A00AD2675 /* HomeViewController+TableView.swift */,
+				239951E9233EC19700AD2675 /* HomeViewController+InteractionProtocol.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				239951D5233EA24B00AD2675 /* PostTableViewCell.swift in Sources */,
 				239951D8233EA70A00AD2675 /* HomeViewController+TableView.swift in Sources */,
 				239951E8233EBD0500AD2675 /* RemoteImage+UIImageView.swift in Sources */,
+				239951EA233EC19700AD2675 /* HomeViewController+InteractionProtocol.swift in Sources */,
 				239951DF233EB63F00AD2675 /* PostMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
