@@ -31,6 +31,8 @@ final class PostTableViewCell: UITableViewCell {
 // MARK: Public methods.
 extension PostTableViewCell {
     func setupCell(_ viewModel: PostViewModelProtocol) {
+        postImage.contentMode = .scaleAspectFill
+        postImage.setRemoteImage(imageUrl: viewModel.imageUrl())
         unReadIndicator.isHidden = viewModel.isReaded()
         authorLabel.text = viewModel.authorUserName()
         timeAgoLabel.text = viewModel.timeAgo()
