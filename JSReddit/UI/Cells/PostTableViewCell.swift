@@ -9,14 +9,39 @@
 import UIKit
 
 final class PostTableViewCell: UITableViewCell {
+    // MARK: Definitions.
     static let reuseIdentifier: String = "postCell"
     static let xibName: String = "PostTableViewCell"
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    // MARK: Outlets.
+    @IBOutlet weak var unReadIndicator: UIView!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var timeAgoLabel: UILabel!
+    @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var postText: UILabel!
+    @IBOutlet weak var commentsCountLabel: UILabel!
 
+    // MARK: Lifecycle.
     override func prepareForReuse() {
         super.prepareForReuse()
+        postImage.image = nil
+    }
+}
+
+// MARK: Public methods.
+extension PostTableViewCell {
+    func setupCell(_ viewModel: PostViewModelProtocol) {
+        unReadIndicator.isHidden = viewModel.isReaded()
+        authorLabel.text = viewModel.authorUserName()
+        timeAgoLabel.text = viewModel.timeAgo()
+        postText.text = viewModel.postText()
+        commentsCountLabel.text = "\(viewModel.commentsCount()) comments"
+    }
+}
+
+// MARK: User Actions.
+private extension PostTableViewCell {
+    @IBAction func didTapOnDismissPost() {
+        print("didTapOnDismissPost")
     }
 }

@@ -15,6 +15,9 @@
 		239951D5233EA24B00AD2675 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951D3233EA24B00AD2675 /* PostTableViewCell.swift */; };
 		239951D6233EA24B00AD2675 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 239951D4233EA24B00AD2675 /* PostTableViewCell.xib */; };
 		239951D8233EA70A00AD2675 /* HomeViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951D7233EA70A00AD2675 /* HomeViewController+TableView.swift */; };
+		239951DC233EB58600AD2675 /* PostViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951DB233EB58600AD2675 /* PostViewModelProtocol.swift */; };
+		239951DF233EB63F00AD2675 /* PostMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951DE233EB63F00AD2675 /* PostMock.swift */; };
+		239951E2233EB81200AD2675 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951E1233EB81200AD2675 /* PostViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		239951D3233EA24B00AD2675 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		239951D4233EA24B00AD2675 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		239951D7233EA70A00AD2675 /* HomeViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+TableView.swift"; sourceTree = "<group>"; };
+		239951DB233EB58600AD2675 /* PostViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModelProtocol.swift; sourceTree = "<group>"; };
+		239951DE233EB63F00AD2675 /* PostMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMock.swift; sourceTree = "<group>"; };
+		239951E1233EB81200AD2675 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,7 @@
 		239951B3233E5D0600AD2675 /* JSReddit */ = {
 			isa = PBXGroup;
 			children = (
+				239951D9233EB56C00AD2675 /* Models */,
 				239951C8233E9A2900AD2675 /* Controllers */,
 				239951D1233EA22E00AD2675 /* UI */,
 				239951CA233E9A2900AD2675 /* Storyboards */,
@@ -111,6 +118,40 @@
 				239951D4233EA24B00AD2675 /* PostTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		239951D9233EB56C00AD2675 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				239951E0233EB7F000AD2675 /* ViewModels */,
+				239951DD233EB63000AD2675 /* Mocks */,
+				239951DA233EB56C00AD2675 /* Protocols */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		239951DA233EB56C00AD2675 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				239951DB233EB58600AD2675 /* PostViewModelProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		239951DD233EB63000AD2675 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				239951DE233EB63F00AD2675 /* PostMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		239951E0233EB7F000AD2675 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				239951E1233EB81200AD2675 /* PostViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,10 +226,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				239951DC233EB58600AD2675 /* PostViewModelProtocol.swift in Sources */,
+				239951E2233EB81200AD2675 /* PostViewModel.swift in Sources */,
 				239951B5233E5D0600AD2675 /* AppDelegate.swift in Sources */,
 				239951CE233E9A2900AD2675 /* HomeViewController.swift in Sources */,
 				239951D5233EA24B00AD2675 /* PostTableViewCell.swift in Sources */,
 				239951D8233EA70A00AD2675 /* HomeViewController+TableView.swift in Sources */,
+				239951DF233EB63F00AD2675 /* PostMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
