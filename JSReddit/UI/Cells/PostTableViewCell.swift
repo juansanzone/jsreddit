@@ -11,6 +11,7 @@ import UIKit
 
 protocol PostCellInteractionProtocol: NSObjectProtocol {
     func shouldDismissPost(_ post: PostViewModelProtocol)
+    func shouldDismissAll()
 }
 
 final class PostTableViewCell: UITableViewCell {

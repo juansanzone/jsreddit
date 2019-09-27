@@ -14,4 +14,8 @@ extension HomeViewController: PostCellInteractionProtocol {
     func shouldDismissPost(_ post: PostViewModelProtocol) {
         viewModel = viewModel.remove(post)
     }
+
+    func shouldDismissAll() {
+        viewModel = viewModel.removeAll()
+    }
 }
