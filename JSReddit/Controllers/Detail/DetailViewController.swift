@@ -11,6 +11,10 @@ import UIKit
 final class DetailViewController: UIViewController {
     // MARK: Definitions.
     internal let post: PostViewModelProtocol
+    internal var galleryManager: SaveGalleryManager?
+
+    // MARK: UI
+    internal var postImage: UIImage?
 
     // MARK: Inits.
     init(withPost: PostViewModelProtocol) {
@@ -26,6 +30,7 @@ final class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupGalleryManager()
     }
 }
 
@@ -40,5 +45,9 @@ private extension DetailViewController {
         setupPostLabel(bottomOf:
             setupPostImage(bottomOf:
                 setupUserNameLabel()))
+    }
+
+    func setupGalleryManager() {
+        galleryManager = SaveGalleryManager(withProtocol: self)
     }
 }

@@ -25,6 +25,9 @@
 		239951F9233F9A3200AD2675 /* DetailViewController+UserNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951F8233F9A3200AD2675 /* DetailViewController+UserNameLabel.swift */; };
 		239951FB233F9AAE00AD2675 /* DetailViewController+PostImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951FA233F9AAE00AD2675 /* DetailViewController+PostImage.swift */; };
 		239951FD233F9AE200AD2675 /* DetailViewController+PostLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951FC233F9AE200AD2675 /* DetailViewController+PostLabel.swift */; };
+		23995200233FA62900AD2675 /* SaveGalleryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951FF233FA62900AD2675 /* SaveGalleryManager.swift */; };
+		23995202233FA8DA00AD2675 /* DetailViewController+SaveGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23995201233FA8DA00AD2675 /* DetailViewController+SaveGallery.swift */; };
+		23995204233FB66E00AD2675 /* SaveGalleryManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23995203233FB66E00AD2675 /* SaveGalleryManagerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		239951F8233F9A3200AD2675 /* DetailViewController+UserNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+UserNameLabel.swift"; sourceTree = "<group>"; };
 		239951FA233F9AAE00AD2675 /* DetailViewController+PostImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+PostImage.swift"; sourceTree = "<group>"; };
 		239951FC233F9AE200AD2675 /* DetailViewController+PostLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+PostLabel.swift"; sourceTree = "<group>"; };
+		239951FF233FA62900AD2675 /* SaveGalleryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveGalleryManager.swift; sourceTree = "<group>"; };
+		23995201233FA8DA00AD2675 /* DetailViewController+SaveGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+SaveGallery.swift"; sourceTree = "<group>"; };
+		23995203233FB66E00AD2675 /* SaveGalleryManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveGalleryManagerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 			children = (
 				239951E6233EBD0500AD2675 /* Extensions */,
 				239951D9233EB56C00AD2675 /* Models */,
+				239951FE233FA61200AD2675 /* Managers */,
 				239951C8233E9A2900AD2675 /* Controllers */,
 				239951D1233EA22E00AD2675 /* UI */,
 				239951CA233E9A2900AD2675 /* Storyboards */,
@@ -150,6 +157,7 @@
 			children = (
 				239951DB233EB58600AD2675 /* PostViewModelProtocol.swift */,
 				239951EB233F857B00AD2675 /* UserInteractionProtocol.swift */,
+				23995203233FB66E00AD2675 /* SaveGalleryManagerProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -192,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				239951F5233F869200AD2675 /* DetailViewController.swift */,
+				23995201233FA8DA00AD2675 /* DetailViewController+SaveGallery.swift */,
 				239951F7233F9A1A00AD2675 /* UIComponents */,
 			);
 			path = Detail;
@@ -205,6 +214,14 @@
 				239951FC233F9AE200AD2675 /* DetailViewController+PostLabel.swift */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		239951FE233FA61200AD2675 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				239951FF233FA62900AD2675 /* SaveGalleryManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,8 +298,10 @@
 			files = (
 				239951F9233F9A3200AD2675 /* DetailViewController+UserNameLabel.swift in Sources */,
 				239951F6233F869200AD2675 /* DetailViewController.swift in Sources */,
+				23995200233FA62900AD2675 /* SaveGalleryManager.swift in Sources */,
 				239951FD233F9AE200AD2675 /* DetailViewController+PostLabel.swift in Sources */,
 				239951DC233EB58600AD2675 /* PostViewModelProtocol.swift in Sources */,
+				23995204233FB66E00AD2675 /* SaveGalleryManagerProtocol.swift in Sources */,
 				239951FB233F9AAE00AD2675 /* DetailViewController+PostImage.swift in Sources */,
 				239951EC233F857B00AD2675 /* UserInteractionProtocol.swift in Sources */,
 				239951F2233F867100AD2675 /* HomeViewController+InteractionProtocol.swift in Sources */,
@@ -291,6 +310,7 @@
 				239951F3233F867100AD2675 /* HomeViewController.swift in Sources */,
 				239951D5233EA24B00AD2675 /* PostTableViewCell.swift in Sources */,
 				239951E8233EBD0500AD2675 /* RemoteImage+UIImageView.swift in Sources */,
+				23995202233FA8DA00AD2675 /* DetailViewController+SaveGallery.swift in Sources */,
 				239951DF233EB63F00AD2675 /* PostMock.swift in Sources */,
 				239951F1233F867100AD2675 /* HomeViewController+TableView.swift in Sources */,
 			);

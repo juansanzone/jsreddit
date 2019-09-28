@@ -32,7 +32,17 @@ extension DetailViewController {
             imageView.heightAnchor.constraint(equalToConstant: size)
         ])
 
-        imageView.setRemoteImage(imageUrl: post.imageUrl())
+        imageView.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapOnImage))
+        imageView.addGestureRecognizer(tapGesture)
+        
+        imageView.setRemoteImage(imageUrl: post.imageUrl()) { [weak self] remoteImage in
+            self?.postImage = imageView.image
+        }
         return imageView
+    }
+
+    @objc func didTapOnImage() {
+        galleryManager?.saveImage(postImage)
     }
 }
