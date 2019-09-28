@@ -10,7 +10,6 @@ import Foundation
 
 @objc protocol PostViewModelProtocol: NSObjectProtocol {
     func postId() -> String
-    func isReaded() -> Bool
     func authorUserName() -> String
     func timeAgo() -> String
     func imageUrl() -> String
