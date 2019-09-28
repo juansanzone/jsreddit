@@ -10,21 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="mpV-ks-yRg">
-            <objects>
-                <viewController id="xdh-WE-KVZ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Aaa-S1-TZu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="gmA-rH-PPz"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6me-Nu-0JS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-786" y="535"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="dCy-z1-XYz">
             <objects>
@@ -49,7 +34,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-785" y="-168"/>
+            <point key="canvasLocation" x="-790" y="158"/>
         </scene>
         <!--Reddit Posts-->
         <scene sceneID="5VL-sr-C6n">
@@ -102,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKB-BN-xEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="266" y="-169"/>
+            <point key="canvasLocation" x="278" y="158"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="EBi-E6-iBu">
@@ -110,7 +95,6 @@
                 <splitViewController id="O2n-gf-6bz" sceneMemberID="viewController">
                     <connections>
                         <segue destination="TWK-P9-N33" kind="relationship" relationship="masterViewController" id="Jda-mi-bcB"/>
-                        <segue destination="xdh-WE-KVZ" kind="relationship" relationship="detailViewController" id="JLx-sR-0E9"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DtQ-1l-L8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
