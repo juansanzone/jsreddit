@@ -11,6 +11,7 @@ import UIKit
 final class HomeViewController: UIViewController {
     // MARK: Outlets.
     @IBOutlet weak var postsTableView: UITableView!
+    private let pullToRefresh = UIRefreshControl()
 
     // MARK: Definitions.
     internal var viewModel = PostViewModel()
@@ -19,6 +20,7 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupPullToRefresh()
     }
 }
 
@@ -34,5 +36,13 @@ private extension HomeViewController {
         postsTableView.delegate = self
         postsTableView.dataSource = self
         postsTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomContentInset, right: 0)
+    }
+
+    func setupPullToRefresh() {
+        let font = UIFont.systemFont(ofSize: 12)
+        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.white]
+        pullToRefresh.tintColor = .white
+        pullToRefresh.attributedTitle = NSAttributedString(string: "Updating ...", attributes: attributes)
+        postsTableView.refreshControl = pullToRefresh
     }
 }
