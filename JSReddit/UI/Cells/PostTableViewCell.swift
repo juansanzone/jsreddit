@@ -8,18 +8,14 @@
 
 import UIKit
 
-
-protocol PostCellInteractionProtocol: NSObjectProtocol {
-    func shouldDismissPost(_ post: PostViewModelProtocol)
-    func shouldDismissAll()
-}
-
 final class PostTableViewCell: UITableViewCell {
     // MARK: Definitions.
     static let reuseIdentifier: String = "postCell"
     static let xibName: String = "PostTableViewCell"
+
+    // MARK: Protocols.
     private weak var model: PostViewModelProtocol?
-    private weak var userInteractionProtocol: PostCellInteractionProtocol?
+    private weak var userInteractionProtocol: UserInteractionProtocol?
 
     // MARK: Outlets.
     @IBOutlet weak var unReadIndicator: UIView!
@@ -28,7 +24,6 @@ final class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postText: UILabel!
     @IBOutlet weak var commentsCountLabel: UILabel!
-
 
     // MARK: Lifecycle.
     override func prepareForReuse() {
@@ -50,7 +45,7 @@ extension PostTableViewCell {
         commentsCountLabel.text = "\(viewModel.commentsCount()) comments"
     }
 
-    func setUserInteractionProtocol( _ iProtocol: PostCellInteractionProtocol) {
+    func setUserInteractionProtocol( _ iProtocol: UserInteractionProtocol) {
         userInteractionProtocol = iProtocol
     }
 }

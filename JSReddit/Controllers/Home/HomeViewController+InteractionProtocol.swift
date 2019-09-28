@@ -8,13 +8,10 @@
 
 import UIKit
 
-// MARK: Interaction protocol.
-// Handler of dismiss actions.
-extension HomeViewController: PostCellInteractionProtocol {
-    @IBAction func didTapOnDismissAll() {
-        shouldDismissAll()
-    }
-
+// MARK: User Interaction protocol.
+// Handler for user actions.
+extension HomeViewController: UserInteractionProtocol {
+    // Dismiss a post.
     func shouldDismissPost(_ post: PostViewModelProtocol) {
         if let postIndex = viewModel.getPostIndex(post) {
             viewModel = viewModel.remove(post)
@@ -23,6 +20,7 @@ extension HomeViewController: PostCellInteractionProtocol {
         }
     }
 
+    // Dismiss all posts.
     func shouldDismissAll() {
         let posts = viewModel.getPosts()
         var currentIndex: Int = 0
@@ -33,5 +31,15 @@ extension HomeViewController: PostCellInteractionProtocol {
         }
         viewModel = viewModel.removeAll()
         postsTableView.deleteRows(at: indexPathsToRemove, with: UITableView.RowAnimation.fade)
+    }
+
+    @IBAction func didTapOnDismissAll() {
+        shouldDismissAll()
+    }
+
+    // Open detail.
+    func shouldOpenDetail(_ post: PostViewModelProtocol) {
+        let detailVC = DetailViewController(withPost: post)
+        splitViewController?.showDetailViewController(detailVC, sender: self)
     }
 }
