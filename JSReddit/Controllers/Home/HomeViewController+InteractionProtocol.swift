@@ -42,4 +42,9 @@ extension HomeViewController: UserInteractionProtocol {
         let detailVC = DetailViewController(withPost: post)
         splitViewController?.showDetailViewController(detailVC, sender: self)
     }
+
+    // User refresh list.
+    func shouldRefreshList() {
+        print("shouldRefreshList")
+    }
 }

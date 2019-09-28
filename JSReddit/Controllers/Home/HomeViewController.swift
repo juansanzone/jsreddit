@@ -43,6 +43,7 @@ private extension HomeViewController {
         let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.white]
         pullToRefresh.tintColor = .white
         pullToRefresh.attributedTitle = NSAttributedString(string: "Updating ...", attributes: attributes)
+        pullToRefresh.addTarget(self, action: #selector(shouldRefreshList), for: .valueChanged)
         postsTableView.refreshControl = pullToRefresh
     }
 }

@@ -8,8 +8,9 @@
 
 import Foundation
 
-protocol UserInteractionProtocol: NSObjectProtocol {
+@objc protocol UserInteractionProtocol: NSObjectProtocol {
     func shouldDismissPost(_ post: PostViewModelProtocol)
     func shouldDismissAll()
     func shouldOpenDetail(_ post: PostViewModelProtocol)
+    func shouldRefreshList()
 }
