@@ -45,6 +45,6 @@ extension HomeViewController: UserInteractionProtocol {
 
     // User refresh list.
     func shouldRefreshList() {
-        print("shouldRefreshList")
+        // TODO: get to fetch posts.
     }
 }

@@ -11,6 +11,14 @@ import Foundation
 struct PostViewModel {
     private var posts: [PostViewModelProtocol] = [PostMock1(), PostMock2(), PostMock3()]
 
+    private let postService = RedditPostsService()
+
+    func fetchPosts() {
+        postService.getTopPosts { response in
+            // TODO: Convert response to viewModel
+        }
+    }
+
     func getPosts() -> [PostViewModelProtocol] {
         return posts
     }

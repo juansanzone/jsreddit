@@ -22,11 +22,11 @@ struct NetworkService {
         urlRequest.httpMethod = router.method
 
         let session = URLSession(configuration: .default)
-        let dataTask = session.dataTask(with: urlRequest) { data, response, error in
 
+        let dataTask = session.dataTask(with: urlRequest) { data, response, error in
             guard error == nil else {
                 completion(.failure(error!))
-                // print(error?.localizedDescription)
+                print(error!.localizedDescription)
                 return
             }
             guard response != nil else {

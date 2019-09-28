@@ -22,7 +22,7 @@ enum ReditApiNetworkRouter {
     var path: String {
         switch self {
         case .getTopPosts:
-            return "top/.json"
+            return "/top/.json"
         }
     }
 
