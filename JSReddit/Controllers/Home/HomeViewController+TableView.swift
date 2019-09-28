@@ -31,6 +31,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     // Handle user tap on post detail.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row > viewModel.getPostsCount() { return }
+        if let targetCell = tableView.cellForRow(at: indexPath) as? PostTableViewCell {
+            targetCell.hideUnReadIndicator()
+        }
         let targetPost = viewModel.getPosts()[indexPath.row]
         shouldOpenDetail(targetPost)
     }

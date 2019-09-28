@@ -31,6 +31,7 @@ final class DetailViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupGalleryManager()
+        setPostAsReaded()
     }
 }
 
@@ -49,5 +50,9 @@ private extension DetailViewController {
 
     func setupGalleryManager() {
         galleryManager = SaveGalleryManager(withProtocol: self)
+    }
+
+    func setPostAsReaded() {
+        LocalStorageManager.Post.setAsRead(post.postId())
     }
 }

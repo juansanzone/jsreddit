@@ -28,6 +28,7 @@
 		23995200233FA62900AD2675 /* SaveGalleryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951FF233FA62900AD2675 /* SaveGalleryManager.swift */; };
 		23995202233FA8DA00AD2675 /* DetailViewController+SaveGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23995201233FA8DA00AD2675 /* DetailViewController+SaveGallery.swift */; };
 		23995204233FB66E00AD2675 /* SaveGalleryManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23995203233FB66E00AD2675 /* SaveGalleryManagerProtocol.swift */; };
+		23995206233FC6DB00AD2675 /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23995205233FC6DB00AD2675 /* LocalStorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		239951FF233FA62900AD2675 /* SaveGalleryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveGalleryManager.swift; sourceTree = "<group>"; };
 		23995201233FA8DA00AD2675 /* DetailViewController+SaveGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+SaveGallery.swift"; sourceTree = "<group>"; };
 		23995203233FB66E00AD2675 /* SaveGalleryManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveGalleryManagerProtocol.swift; sourceTree = "<group>"; };
+		23995205233FC6DB00AD2675 /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				239951FF233FA62900AD2675 /* SaveGalleryManager.swift */,
+				23995205233FC6DB00AD2675 /* LocalStorageManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				239951FB233F9AAE00AD2675 /* DetailViewController+PostImage.swift in Sources */,
 				239951EC233F857B00AD2675 /* UserInteractionProtocol.swift in Sources */,
 				239951F2233F867100AD2675 /* HomeViewController+InteractionProtocol.swift in Sources */,
+				23995206233FC6DB00AD2675 /* LocalStorageManager.swift in Sources */,
 				239951E2233EB81200AD2675 /* PostViewModel.swift in Sources */,
 				239951B5233E5D0600AD2675 /* AppDelegate.swift in Sources */,
 				239951F3233F867100AD2675 /* HomeViewController.swift in Sources */,

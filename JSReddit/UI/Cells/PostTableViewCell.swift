@@ -38,7 +38,7 @@ extension PostTableViewCell {
         model = viewModel
         postImage.contentMode = .scaleAspectFill
         postImage.setRemoteImage(imageUrl: viewModel.imageUrl())
-        unReadIndicator.isHidden = viewModel.isReaded()
+        unReadIndicator.isHidden = LocalStorageManager.Post.isReaded(viewModel.postId())
         authorLabel.text = viewModel.authorUserName()
         timeAgoLabel.text = viewModel.timeAgo()
         postText.text = viewModel.postText()
@@ -47,6 +47,10 @@ extension PostTableViewCell {
 
     func setUserInteractionProtocol( _ iProtocol: UserInteractionProtocol) {
         userInteractionProtocol = iProtocol
+    }
+
+    func hideUnReadIndicator() {
+        unReadIndicator.isHidden = true
     }
 }
 
