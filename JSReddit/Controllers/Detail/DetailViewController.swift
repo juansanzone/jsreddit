@@ -9,8 +9,10 @@
 import UIKit
 
 final class DetailViewController: UIViewController {
-    private let post: PostViewModelProtocol
+    // MARK: Definitions.
+    internal let post: PostViewModelProtocol
 
+    // MARK: Inits.
     init(withPost: PostViewModelProtocol) {
         self.post = withPost
         super.init(nibName: nil, bundle: nil)
@@ -20,14 +22,23 @@ final class DetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: Lifecycle.
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
 }
 
+// MARK: Setup/render methods.
 private extension DetailViewController {
     func setupUI() {
-        print(post.authorUserName())
+        /*
+          I used Storyboards/Xibs for HomeViewController and PostTableViewCell.
+          In this case I'll use UI by code to show my knowledge.
+        */
+        view.backgroundColor = .white
+        setupPostLabel(bottomOf:
+            setupPostImage(bottomOf:
+                setupUserNameLabel()))
     }
 }

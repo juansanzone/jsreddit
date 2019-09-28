@@ -22,6 +22,9 @@
 		239951F2233F867100AD2675 /* HomeViewController+InteractionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951EF233F867100AD2675 /* HomeViewController+InteractionProtocol.swift */; };
 		239951F3233F867100AD2675 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951F0233F867100AD2675 /* HomeViewController.swift */; };
 		239951F6233F869200AD2675 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951F5233F869200AD2675 /* DetailViewController.swift */; };
+		239951F9233F9A3200AD2675 /* DetailViewController+UserNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951F8233F9A3200AD2675 /* DetailViewController+UserNameLabel.swift */; };
+		239951FB233F9AAE00AD2675 /* DetailViewController+PostImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951FA233F9AAE00AD2675 /* DetailViewController+PostImage.swift */; };
+		239951FD233F9AE200AD2675 /* DetailViewController+PostLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951FC233F9AE200AD2675 /* DetailViewController+PostLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		239951EF233F867100AD2675 /* HomeViewController+InteractionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeViewController+InteractionProtocol.swift"; sourceTree = "<group>"; };
 		239951F0233F867100AD2675 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		239951F5233F869200AD2675 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		239951F8233F9A3200AD2675 /* DetailViewController+UserNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+UserNameLabel.swift"; sourceTree = "<group>"; };
+		239951FA233F9AAE00AD2675 /* DetailViewController+PostImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+PostImage.swift"; sourceTree = "<group>"; };
+		239951FC233F9AE200AD2675 /* DetailViewController+PostLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+PostLabel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,8 +192,19 @@
 			isa = PBXGroup;
 			children = (
 				239951F5233F869200AD2675 /* DetailViewController.swift */,
+				239951F7233F9A1A00AD2675 /* UIComponents */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		239951F7233F9A1A00AD2675 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				239951F8233F9A3200AD2675 /* DetailViewController+UserNameLabel.swift */,
+				239951FA233F9AAE00AD2675 /* DetailViewController+PostImage.swift */,
+				239951FC233F9AE200AD2675 /* DetailViewController+PostLabel.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +279,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				239951F9233F9A3200AD2675 /* DetailViewController+UserNameLabel.swift in Sources */,
 				239951F6233F869200AD2675 /* DetailViewController.swift in Sources */,
+				239951FD233F9AE200AD2675 /* DetailViewController+PostLabel.swift in Sources */,
 				239951DC233EB58600AD2675 /* PostViewModelProtocol.swift in Sources */,
+				239951FB233F9AAE00AD2675 /* DetailViewController+PostImage.swift in Sources */,
 				239951EC233F857B00AD2675 /* UserInteractionProtocol.swift in Sources */,
 				239951F2233F867100AD2675 /* HomeViewController+InteractionProtocol.swift in Sources */,
 				239951E2233EB81200AD2675 /* PostViewModel.swift in Sources */,
