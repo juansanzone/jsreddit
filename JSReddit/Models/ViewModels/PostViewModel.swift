@@ -15,9 +15,13 @@ struct PostViewModel {
         return posts
     }
 
+    func getPostsCount() -> Int {
+        return posts.count
+    }
+
     @discardableResult
     mutating func remove(_ post: PostViewModelProtocol) -> PostViewModel {
-        if let targetIndex = posts.firstIndex(where: {$0 === post}) {
+        if let targetIndex = getPostIndex(post) {
             posts.remove(at: targetIndex)
         }
         return self
@@ -27,5 +31,10 @@ struct PostViewModel {
     mutating func removeAll() -> PostViewModel {
         posts.removeAll()
         return self
+    }
+
+    func getPostIndex(_ post: PostViewModelProtocol) -> Int? {
+        guard let postIndex = posts.firstIndex(where: {$0 === post}) else { return nil }
+        return postIndex
     }
 }
