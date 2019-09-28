@@ -68,13 +68,30 @@
                                     <outlet property="delegate" destination="SDZ-CI-ujX" id="bXf-2L-Sls"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" alpha="0.97999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRs-cR-6Ln">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="uFe-sX-Pcb"/>
+                                </constraints>
+                                <state key="normal" title="Dismiss All">
+                                    <color key="titleColor" red="0.80437010529999997" green="0.53723329310000001" blue="0.21949774029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleShadowColor" red="0.80437010529999997" green="0.53723329310000001" blue="0.21949774029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapOnDismissAll" destination="SDZ-CI-ujX" eventType="touchUpInside" id="QTf-IA-K8a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="sbc-Jy-K2A" firstAttribute="bottom" secondItem="jRs-cR-6Ln" secondAttribute="bottom" id="AF0-dU-iaE"/>
+                            <constraint firstItem="sbc-Jy-K2A" firstAttribute="trailing" secondItem="jRs-cR-6Ln" secondAttribute="trailing" id="DPe-e1-FDh"/>
                             <constraint firstItem="nA8-ou-GX8" firstAttribute="top" secondItem="sbc-Jy-K2A" secondAttribute="top" id="OOJ-la-HQi"/>
                             <constraint firstItem="sbc-Jy-K2A" firstAttribute="bottom" secondItem="nA8-ou-GX8" secondAttribute="bottom" id="SXg-6Y-CtP"/>
                             <constraint firstItem="nA8-ou-GX8" firstAttribute="leading" secondItem="sbc-Jy-K2A" secondAttribute="leading" id="Z46-xq-b2J"/>
                             <constraint firstItem="sbc-Jy-K2A" firstAttribute="trailing" secondItem="nA8-ou-GX8" secondAttribute="trailing" id="uGG-cg-LfL"/>
+                            <constraint firstItem="jRs-cR-6Ln" firstAttribute="leading" secondItem="sbc-Jy-K2A" secondAttribute="leading" id="yF5-xj-a3n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sbc-Jy-K2A"/>
                     </view>

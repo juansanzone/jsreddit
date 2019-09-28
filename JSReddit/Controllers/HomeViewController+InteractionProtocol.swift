@@ -6,16 +6,32 @@
 //  Copyright © 2019 JuanSanzone. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // MARK: Interaction protocol.
-// Handler of dismiss action.
+// Handler of dismiss actions.
 extension HomeViewController: PostCellInteractionProtocol {
+    @IBAction func didTapOnDismissAll() {
+        shouldDismissAll()
+    }
+
     func shouldDismissPost(_ post: PostViewModelProtocol) {
-        viewModel = viewModel.remove(post)
+        if let postIndex = viewModel.getPostIndex(post) {
+            viewModel = viewModel.remove(post)
+            let indexPathToRemove = IndexPath(row: postIndex, section: 0)
+            postsTableView.deleteRows(at: [indexPathToRemove], with: UITableView.RowAnimation.left)
+        }
     }
 
     func shouldDismissAll() {
+        let posts = viewModel.getPosts()
+        var currentIndex: Int = 0
+        var indexPathsToRemove: [IndexPath] = [IndexPath]()
+        for _ in posts {
+            indexPathsToRemove.append(IndexPath(row: currentIndex, section: 0))
+            currentIndex += 1
+        }
         viewModel = viewModel.removeAll()
+        postsTableView.deleteRows(at: indexPathsToRemove, with: UITableView.RowAnimation.fade)
     }
 }
