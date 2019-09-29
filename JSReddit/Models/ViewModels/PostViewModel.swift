@@ -31,6 +31,10 @@ class PostViewModel: NSObject {
         return posts.count
     }
 
+    func hasPosts() -> Bool {
+        return getPostsCount() > 0
+    }
+
     @discardableResult
     func remove(_ post: PostViewModelProtocol) -> PostViewModel {
         if let targetIndex = getPostIndex(post) {

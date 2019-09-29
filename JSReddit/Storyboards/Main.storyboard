@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O2n-gf-6bz">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O2n-gf-6bz">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,10 +11,9 @@
         <!--Navigation Controller-->
         <scene sceneID="dCy-z1-XYz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N25-bq-2Bm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="TWK-P9-N33" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZL5-iV-m7W">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,6 +30,7 @@
                         <segue destination="SDZ-CI-ujX" kind="relationship" relationship="rootViewController" id="AWl-gB-3cp"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N25-bq-2Bm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-790" y="158"/>
         </scene>
@@ -45,7 +43,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nA8-ou-GX8">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -53,6 +51,21 @@
                                     <outlet property="delegate" destination="SDZ-CI-ujX" id="bXf-2L-Sls"/>
                                 </connections>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyLogo" translatesAutoresizingMaskIntoConstraints="NO" id="CqG-B6-Y6s">
+                                <rect key="frame" x="157.5" y="325.5" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="CvT-gj-DKH"/>
+                                    <constraint firstAttribute="width" constant="60" id="MYd-Wv-CRl"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="K6W-eo-xF2">
+                                <rect key="frame" x="177.5" y="401.5" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="TkM-YM-K4U"/>
+                                    <constraint firstAttribute="height" constant="20" id="a16-Ab-Lpz"/>
+                                </constraints>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                             <button opaque="NO" alpha="0.97999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRs-cR-6Ln">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -70,9 +83,13 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="K6W-eo-xF2" firstAttribute="top" secondItem="CqG-B6-Y6s" secondAttribute="bottom" constant="16" id="0cN-lc-eDR"/>
+                            <constraint firstItem="CqG-B6-Y6s" firstAttribute="centerX" secondItem="nA8-ou-GX8" secondAttribute="centerX" id="5b6-Ro-dby"/>
                             <constraint firstItem="sbc-Jy-K2A" firstAttribute="bottom" secondItem="jRs-cR-6Ln" secondAttribute="bottom" id="AF0-dU-iaE"/>
                             <constraint firstItem="sbc-Jy-K2A" firstAttribute="trailing" secondItem="jRs-cR-6Ln" secondAttribute="trailing" id="DPe-e1-FDh"/>
+                            <constraint firstItem="CqG-B6-Y6s" firstAttribute="centerY" secondItem="nA8-ou-GX8" secondAttribute="centerY" id="Kb5-Jb-CSg"/>
                             <constraint firstItem="nA8-ou-GX8" firstAttribute="top" secondItem="sbc-Jy-K2A" secondAttribute="top" id="OOJ-la-HQi"/>
+                            <constraint firstItem="K6W-eo-xF2" firstAttribute="centerX" secondItem="CqG-B6-Y6s" secondAttribute="centerX" id="Rnt-tS-Lpd"/>
                             <constraint firstItem="sbc-Jy-K2A" firstAttribute="bottom" secondItem="nA8-ou-GX8" secondAttribute="bottom" id="SXg-6Y-CtP"/>
                             <constraint firstItem="nA8-ou-GX8" firstAttribute="leading" secondItem="sbc-Jy-K2A" secondAttribute="leading" id="Z46-xq-b2J"/>
                             <constraint firstItem="sbc-Jy-K2A" firstAttribute="trailing" secondItem="nA8-ou-GX8" secondAttribute="trailing" id="uGG-cg-LfL"/>
@@ -82,12 +99,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Reddit Posts" id="Cre-l4-fzL"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="K6W-eo-xF2" id="Fq2-Bd-fio"/>
+                        <outlet property="emptyLogo" destination="CqG-B6-Y6s" id="Wlx-7R-1zz"/>
                         <outlet property="postsTableView" destination="nA8-ou-GX8" id="jZ4-y0-28b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKB-BN-xEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278" y="158"/>
+            <point key="canvasLocation" x="277.60000000000002" y="157.87106446776613"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="EBi-E6-iBu">
@@ -102,4 +121,7 @@
             <point key="canvasLocation" x="-1826" y="158"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="emptyLogo" width="305.5" height="256"/>
+    </resources>
 </document>

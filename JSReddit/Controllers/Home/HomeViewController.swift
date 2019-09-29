@@ -11,6 +11,8 @@ import UIKit
 final class HomeViewController: UIViewController {
     // MARK: Outlets.
     @IBOutlet weak var postsTableView: UITableView!
+    @IBOutlet weak var emptyLogo: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     private let pullToRefresh = UIRefreshControl()
 
     // MARK: Definitions.
@@ -21,11 +23,12 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         setupPullToRefresh()
+        resolveActivityIndicator()
         getRemotePosts()
     }
 }
 
-// MARK: Setup methods.
+// MARK: Setup UI methods.
 private extension HomeViewController {
     func setupTableView() {
         let estimatedRowHeight: CGFloat = 400
@@ -57,6 +60,22 @@ internal extension HomeViewController {
                 self?.pullToRefresh.endRefreshing()
                 self?.postsTableView.reloadData()
             }
+            self?.resolveEmptyState()
+        }
+    }
+}
+
+// MARK: Empty State and activity indicator.
+internal extension HomeViewController {
+    func resolveEmptyState() {
+        emptyLogo.alpha = viewModel.hasPosts() ? 0 : 1
+    }
+
+    func resolveActivityIndicator() {
+        if viewModel.hasPosts() {
+            activityIndicator.stopAnimating()
+        } else {
+            activityIndicator.startAnimating()
         }
     }
 }
