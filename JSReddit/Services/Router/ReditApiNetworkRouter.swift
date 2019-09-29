@@ -9,7 +9,11 @@
 import Foundation
 
 enum ReditApiNetworkRouter {
+    static let initialLimit: Int = 10
+    static let limitPerPage: Int = 5
+
     case getTopPosts
+    case getNextPage(String)
 
     var scheme: String {
         return "https"
@@ -21,7 +25,7 @@ enum ReditApiNetworkRouter {
 
     var path: String {
         switch self {
-        case .getTopPosts:
+        case .getTopPosts, .getNextPage:
             return "/top/.json"
         }
     }
@@ -29,13 +33,15 @@ enum ReditApiNetworkRouter {
     var parameters: [URLQueryItem] {
         switch self {
         case .getTopPosts:
-            return [URLQueryItem(name: "limit", value: "50")]
+            return [URLQueryItem(name: "limit", value: String(ReditApiNetworkRouter.initialLimit))]
+        case .getNextPage(let page):
+            return [URLQueryItem(name: "limit", value: String(ReditApiNetworkRouter.limitPerPage)), URLQueryItem(name: "after", value: page)]
         }
     }
 
     var method: String {
         switch self {
-        case .getTopPosts:
+        case .getTopPosts, .getNextPage:
             return "GET"
         }
     }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		234F4D6823406AF200A2E549 /* TimeAgo+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F4D6723406AF200A2E549 /* TimeAgo+Double.swift */; };
+		234F4D6B234100BB00A2E549 /* RedditPostsServiceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F4D6A234100BB00A2E549 /* RedditPostsServiceRepository.swift */; };
+		234F4D6D2341011800A2E549 /* RedditPostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F4D6C2341011800A2E549 /* RedditPostsService.swift */; };
 		239951B5233E5D0600AD2675 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951B4233E5D0600AD2675 /* AppDelegate.swift */; };
 		239951CD233E9A2900AD2675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 239951C7233E9A2900AD2675 /* Assets.xcassets */; };
 		239951CF233E9A2900AD2675 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 239951CB233E9A2900AD2675 /* LaunchScreen.storyboard */; };
@@ -15,7 +17,7 @@
 		239951D5233EA24B00AD2675 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951D3233EA24B00AD2675 /* PostTableViewCell.swift */; };
 		239951D6233EA24B00AD2675 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 239951D4233EA24B00AD2675 /* PostTableViewCell.xib */; };
 		239951DC233EB58600AD2675 /* PostViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951DB233EB58600AD2675 /* PostViewModelProtocol.swift */; };
-		239951E2233EB81200AD2675 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951E1233EB81200AD2675 /* PostViewModel.swift */; };
+		239951E2233EB81200AD2675 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951E1233EB81200AD2675 /* PostsViewModel.swift */; };
 		239951E8233EBD0500AD2675 /* RemoteImage+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951E7233EBD0500AD2675 /* RemoteImage+UIImageView.swift */; };
 		239951EC233F857B00AD2675 /* UserInteractionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951EB233F857B00AD2675 /* UserInteractionProtocol.swift */; };
 		239951F1233F867100AD2675 /* HomeViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951EE233F867100AD2675 /* HomeViewController+TableView.swift */; };
@@ -32,12 +34,13 @@
 		23995209233FE4D100AD2675 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23995208233FE4D100AD2675 /* NetworkService.swift */; };
 		2399520C233FE53300AD2675 /* ReditApiNetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399520B233FE53300AD2675 /* ReditApiNetworkRouter.swift */; };
 		23E29E89233FF97F00C0A80A /* RedditResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E29E88233FF97F00C0A80A /* RedditResponseDto.swift */; };
-		23E29E8B233FFC8A00C0A80A /* RedditPostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E29E8A233FFC8A00C0A80A /* RedditPostsService.swift */; };
 		23E29E8D23402A6A00C0A80A /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E29E8C23402A6A00C0A80A /* PostModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		234F4D6723406AF200A2E549 /* TimeAgo+Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeAgo+Double.swift"; sourceTree = "<group>"; };
+		234F4D6A234100BB00A2E549 /* RedditPostsServiceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditPostsServiceRepository.swift; sourceTree = "<group>"; };
+		234F4D6C2341011800A2E549 /* RedditPostsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditPostsService.swift; sourceTree = "<group>"; };
 		239951B1233E5D0600AD2675 /* JSReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		239951B4233E5D0600AD2675 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		239951C0233E5D0700AD2675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,7 +50,7 @@
 		239951D3233EA24B00AD2675 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		239951D4233EA24B00AD2675 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		239951DB233EB58600AD2675 /* PostViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModelProtocol.swift; sourceTree = "<group>"; };
-		239951E1233EB81200AD2675 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		239951E1233EB81200AD2675 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		239951E7233EBD0500AD2675 /* RemoteImage+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RemoteImage+UIImageView.swift"; sourceTree = "<group>"; };
 		239951EB233F857B00AD2675 /* UserInteractionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractionProtocol.swift; sourceTree = "<group>"; };
 		239951EE233F867100AD2675 /* HomeViewController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeViewController+TableView.swift"; sourceTree = "<group>"; };
@@ -64,7 +67,6 @@
 		23995208233FE4D100AD2675 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		2399520B233FE53300AD2675 /* ReditApiNetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReditApiNetworkRouter.swift; sourceTree = "<group>"; };
 		23E29E88233FF97F00C0A80A /* RedditResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditResponseDto.swift; sourceTree = "<group>"; };
-		23E29E8A233FFC8A00C0A80A /* RedditPostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditPostsService.swift; sourceTree = "<group>"; };
 		23E29E8C23402A6A00C0A80A /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		234F4D692341008A00A2E549 /* RedditPostsService */ = {
+			isa = PBXGroup;
+			children = (
+				234F4D6C2341011800A2E549 /* RedditPostsService.swift */,
+				234F4D6A234100BB00A2E549 /* RedditPostsServiceRepository.swift */,
+			);
+			path = RedditPostsService;
+			sourceTree = "<group>";
+		};
 		239951A8233E5D0600AD2675 = {
 			isa = PBXGroup;
 			children = (
@@ -179,7 +190,7 @@
 		239951E0233EB7F000AD2675 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				239951E1233EB81200AD2675 /* PostViewModel.swift */,
+				239951E1233EB81200AD2675 /* PostsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -236,8 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				2399520A233FE51E00AD2675 /* Router */,
+				234F4D692341008A00A2E549 /* RedditPostsService */,
 				23995208233FE4D100AD2675 /* NetworkService.swift */,
-				23E29E8A233FFC8A00C0A80A /* RedditPostsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -343,16 +354,17 @@
 				23E29E89233FF97F00C0A80A /* RedditResponseDto.swift in Sources */,
 				234F4D6823406AF200A2E549 /* TimeAgo+Double.swift in Sources */,
 				23995206233FC6DB00AD2675 /* LocalStorageManager.swift in Sources */,
-				239951E2233EB81200AD2675 /* PostViewModel.swift in Sources */,
+				239951E2233EB81200AD2675 /* PostsViewModel.swift in Sources */,
 				239951B5233E5D0600AD2675 /* AppDelegate.swift in Sources */,
 				239951F3233F867100AD2675 /* HomeViewController.swift in Sources */,
 				239951D5233EA24B00AD2675 /* PostTableViewCell.swift in Sources */,
+				234F4D6D2341011800A2E549 /* RedditPostsService.swift in Sources */,
 				239951E8233EBD0500AD2675 /* RemoteImage+UIImageView.swift in Sources */,
 				23995209233FE4D100AD2675 /* NetworkService.swift in Sources */,
 				23995202233FA8DA00AD2675 /* DetailViewController+SaveGallery.swift in Sources */,
 				2399520C233FE53300AD2675 /* ReditApiNetworkRouter.swift in Sources */,
 				239951F1233F867100AD2675 /* HomeViewController+TableView.swift in Sources */,
-				23E29E8B233FFC8A00C0A80A /* RedditPostsService.swift in Sources */,
+				234F4D6B234100BB00A2E549 /* RedditPostsServiceRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
