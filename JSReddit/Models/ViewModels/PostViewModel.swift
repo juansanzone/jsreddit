@@ -8,14 +8,18 @@
 
 import Foundation
 
-struct PostViewModel {
-    private var posts: [PostViewModelProtocol] = [PostMock1(), PostMock2(), PostMock3()]
-
+class PostViewModel: NSObject {
+    private var posts: [PostViewModelProtocol] = [PostViewModelProtocol]()
     private let postService = RedditPostsService()
 
-    func fetchPosts() {
-        postService.getTopPosts { response in
-            // TODO: Convert response to viewModel
+    func fetchPosts(success: ((Bool)->Void)? = nil) {
+        postService.getTopPosts { [weak self] remoteResponse in
+            self?.posts = remoteResponse
+            if remoteResponse.count > 0 {
+                success?(true)
+            } else {
+                success?(false)
+            }
         }
     }
 
@@ -28,7 +32,7 @@ struct PostViewModel {
     }
 
     @discardableResult
-    mutating func remove(_ post: PostViewModelProtocol) -> PostViewModel {
+    func remove(_ post: PostViewModelProtocol) -> PostViewModel {
         if let targetIndex = getPostIndex(post) {
             posts.remove(at: targetIndex)
         }
@@ -36,7 +40,7 @@ struct PostViewModel {
     }
 
     @discardableResult
-    mutating func removeAll() -> PostViewModel {
+    func removeAll() -> PostViewModel {
         posts.removeAll()
         return self
     }
