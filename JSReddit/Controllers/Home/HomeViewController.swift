@@ -16,7 +16,7 @@ final class HomeViewController: UIViewController {
     private let pullToRefresh = UIRefreshControl()
 
     // MARK: Definitions.
-    internal var viewModel = PostViewModel()
+    internal var viewModel = PostsViewModel()
 
     // MARK: Lifecycle.
     override func viewDidLoad() {
@@ -52,7 +52,7 @@ private extension HomeViewController {
     }
 }
 
-// MARK: Get Posts from Network.
+// MARK: Network actions.
 internal extension HomeViewController {
     func getRemotePosts() {
         viewModel.fetchPosts { [weak self] success in
@@ -62,6 +62,14 @@ internal extension HomeViewController {
             }
             self?.activityIndicator.stopAnimating()
             self?.resolveEmptyState()
+        }
+    }
+
+    func getNextPage() {
+        viewModel.nextPage { [weak self] success in
+            if success {
+                self?.postsTableView.reloadData()
+            }
         }
     }
 }

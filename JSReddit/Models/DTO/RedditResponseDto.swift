@@ -16,6 +16,12 @@ struct RedditResponseDto: Codable {
 // MARK: Reddit nasted 1 DTO model.
 struct RedditDataResponseDto: Codable {
     let children: [RedditChildrenResponseDto]
+    let nextPage: String?
+
+    enum CodingKeys: String, CodingKey {
+        case children
+        case nextPage = "after"
+    }
 }
 
 // MARK: Reddit nasted 2 DTO model.
