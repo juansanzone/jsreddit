@@ -17,6 +17,7 @@ extension HomeViewController: UserInteractionProtocol {
             viewModel = viewModel.remove(post)
             let indexPathToRemove = IndexPath(row: postIndex, section: 0)
             postsTableView.deleteRows(at: [indexPathToRemove], with: UITableView.RowAnimation.left)
+            resolveEmptyState()
         }
     }
 
@@ -31,6 +32,7 @@ extension HomeViewController: UserInteractionProtocol {
         }
         viewModel = viewModel.removeAll()
         postsTableView.deleteRows(at: indexPathsToRemove, with: UITableView.RowAnimation.fade)
+        resolveEmptyState()
     }
 
     @IBAction func didTapOnDismissAll() {
