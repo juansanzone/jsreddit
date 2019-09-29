@@ -21,7 +21,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         setupPullToRefresh()
-        viewModel.fetchPosts()
+        getRemotePosts()
     }
 }
 
@@ -46,5 +46,17 @@ private extension HomeViewController {
         pullToRefresh.attributedTitle = NSAttributedString(string: "Updating ...", attributes: attributes)
         pullToRefresh.addTarget(self, action: #selector(shouldRefreshList), for: .valueChanged)
         postsTableView.refreshControl = pullToRefresh
+    }
+}
+
+// MARK: Get Posts from Network.
+internal extension HomeViewController {
+    func getRemotePosts() {
+        viewModel.fetchPosts { [weak self] success in
+            if success {
+                self?.pullToRefresh.endRefreshing()
+                self?.postsTableView.reloadData()
+            }
+        }
     }
 }
