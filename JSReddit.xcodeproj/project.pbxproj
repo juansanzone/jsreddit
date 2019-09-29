@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		234F4D6823406AF200A2E549 /* TimeAgo+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F4D6723406AF200A2E549 /* TimeAgo+Double.swift */; };
 		239951B5233E5D0600AD2675 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239951B4233E5D0600AD2675 /* AppDelegate.swift */; };
 		239951CD233E9A2900AD2675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 239951C7233E9A2900AD2675 /* Assets.xcassets */; };
 		239951CF233E9A2900AD2675 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 239951CB233E9A2900AD2675 /* LaunchScreen.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		234F4D6723406AF200A2E549 /* TimeAgo+Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeAgo+Double.swift"; sourceTree = "<group>"; };
 		239951B1233E5D0600AD2675 /* JSReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		239951B4233E5D0600AD2675 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		239951C0233E5D0700AD2675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				239951E7233EBD0500AD2675 /* RemoteImage+UIImageView.swift */,
+				234F4D6723406AF200A2E549 /* TimeAgo+Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				239951EC233F857B00AD2675 /* UserInteractionProtocol.swift in Sources */,
 				239951F2233F867100AD2675 /* HomeViewController+InteractionProtocol.swift in Sources */,
 				23E29E89233FF97F00C0A80A /* RedditResponseDto.swift in Sources */,
+				234F4D6823406AF200A2E549 /* TimeAgo+Double.swift in Sources */,
 				23995206233FC6DB00AD2675 /* LocalStorageManager.swift in Sources */,
 				239951E2233EB81200AD2675 /* PostViewModel.swift in Sources */,
 				239951B5233E5D0600AD2675 /* AppDelegate.swift in Sources */,
