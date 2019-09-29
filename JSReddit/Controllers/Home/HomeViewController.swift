@@ -60,7 +60,6 @@ internal extension HomeViewController {
                 self?.pullToRefresh.endRefreshing()
                 self?.postsTableView.reloadData()
             }
-            self?.activityIndicator.stopAnimating()
             self?.resolveEmptyState()
         }
     }
