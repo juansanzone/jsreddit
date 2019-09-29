@@ -22,9 +22,6 @@ extension UIImageView {
             self.layer.masksToBounds = true
             self.layer.cornerRadius = defaultCornerRadius
             success?(image)
-            #if DEBUG
-                print("Retrieve image from Cache")
-            #endif
         } else {
             self.layer.cornerRadius = placeHolderRadius
             self.backgroundColor = UIColor.gray
@@ -33,9 +30,6 @@ extension UIImageView {
                 if let data = data, let response = response, ((response as? HTTPURLResponse)?.statusCode ?? 500) < 300, let image = UIImage(data: data) {
                     let cachedData = CachedURLResponse(response: response, data: data)
                     cache.storeCachedResponse(cachedData, for: request)
-                    #if DEBUG
-                        print("Retrieve image from Network")
-                    #endif
                     UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: { [weak self] in
                         DispatchQueue.main.async {
                             self?.backgroundColor = .clear
