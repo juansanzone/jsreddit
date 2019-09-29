@@ -84,14 +84,14 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="K6W-eo-xF2" firstAttribute="top" secondItem="CqG-B6-Y6s" secondAttribute="bottom" constant="16" id="0cN-lc-eDR"/>
-                            <constraint firstItem="CqG-B6-Y6s" firstAttribute="centerX" secondItem="nA8-ou-GX8" secondAttribute="centerX" id="5b6-Ro-dby"/>
                             <constraint firstItem="sbc-Jy-K2A" firstAttribute="bottom" secondItem="jRs-cR-6Ln" secondAttribute="bottom" id="AF0-dU-iaE"/>
                             <constraint firstItem="sbc-Jy-K2A" firstAttribute="trailing" secondItem="jRs-cR-6Ln" secondAttribute="trailing" id="DPe-e1-FDh"/>
-                            <constraint firstItem="CqG-B6-Y6s" firstAttribute="centerY" secondItem="nA8-ou-GX8" secondAttribute="centerY" id="Kb5-Jb-CSg"/>
                             <constraint firstItem="nA8-ou-GX8" firstAttribute="top" secondItem="sbc-Jy-K2A" secondAttribute="top" id="OOJ-la-HQi"/>
                             <constraint firstItem="K6W-eo-xF2" firstAttribute="centerX" secondItem="CqG-B6-Y6s" secondAttribute="centerX" id="Rnt-tS-Lpd"/>
                             <constraint firstItem="sbc-Jy-K2A" firstAttribute="bottom" secondItem="nA8-ou-GX8" secondAttribute="bottom" id="SXg-6Y-CtP"/>
+                            <constraint firstItem="CqG-B6-Y6s" firstAttribute="centerX" secondItem="sbc-Jy-K2A" secondAttribute="centerX" id="VvA-au-KO6"/>
                             <constraint firstItem="nA8-ou-GX8" firstAttribute="leading" secondItem="sbc-Jy-K2A" secondAttribute="leading" id="Z46-xq-b2J"/>
+                            <constraint firstItem="CqG-B6-Y6s" firstAttribute="centerY" secondItem="sbc-Jy-K2A" secondAttribute="centerY" id="rNt-25-PZ8"/>
                             <constraint firstItem="sbc-Jy-K2A" firstAttribute="trailing" secondItem="nA8-ou-GX8" secondAttribute="trailing" id="uGG-cg-LfL"/>
                             <constraint firstItem="jRs-cR-6Ln" firstAttribute="leading" secondItem="sbc-Jy-K2A" secondAttribute="leading" id="yF5-xj-a3n"/>
                         </constraints>
