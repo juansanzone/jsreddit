@@ -36,7 +36,7 @@ extension PostModel: PostViewModelProtocol {
     }
 
     func timeAgo() -> String {
-        return "\(timestamp)" //TODO: Timeago
+        return timestamp.stringTimeAgo()
     }
 
     func imageUrl() -> String {
