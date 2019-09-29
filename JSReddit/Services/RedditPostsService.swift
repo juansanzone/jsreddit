@@ -18,7 +18,7 @@ struct RedditPostsService {
                 let posts = mainResponse.data.children
                 for post in posts {
                     let targetPost = post.post
-                    postsResponse.append(PostModel(id: targetPost.id, userName: targetPost.author_fullname, imageUrl: targetPost.thumbnail, text: targetPost.title, commentsCount: targetPost.num_comments, timestamp: targetPost.created))
+                    postsResponse.append(PostModel(id: targetPost.id, userName: targetPost.author_fullname, imageUrl: targetPost.thumbnail, text: targetPost.title, commentsCount: targetPost.num_comments, timestamp: targetPost.created, url: targetPost.url))
                 }
                 success?(postsResponse)
             case .failure:

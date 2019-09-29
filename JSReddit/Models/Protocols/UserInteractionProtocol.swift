@@ -13,4 +13,5 @@ import Foundation
     func shouldDismissAll()
     func shouldOpenDetail(_ post: PostViewModelProtocol)
     func shouldRefreshList()
+    func shouldOpenUrl(url: String)
 }

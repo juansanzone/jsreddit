@@ -61,4 +61,10 @@ private extension PostTableViewCell {
             userInteractionProtocol?.shouldDismissPost(targetPost)
         }
     }
+
+    @IBAction func didTapOnImage(_ sender: Any) {
+        if let targetPost = model {
+            userInteractionProtocol?.shouldOpenUrl(url: targetPost.postUrl())
+        }
+    }
 }
