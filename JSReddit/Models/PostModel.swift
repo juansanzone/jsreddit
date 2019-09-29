@@ -15,14 +15,16 @@ final class PostModel: NSObject {
     let text: String
     let commentsQuantity: Int
     let timestamp: Double
+    let url: String
 
-    init(id: String, userName: String, imageUrl: String, text: String, commentsCount: Int,  timestamp: Double) {
+    init(id: String, userName: String, imageUrl: String, text: String, commentsCount: Int,  timestamp: Double, url: String) {
         self.id = id
         self.userName = userName
         self.imageRemoteUrl = imageUrl
         self.text = text
         self.commentsQuantity = commentsCount
         self.timestamp = timestamp
+        self.url = url
     }
 }
 
@@ -49,5 +51,9 @@ extension PostModel: PostViewModelProtocol {
 
     func commentsCount() -> Int {
         return commentsQuantity
+    }
+
+    func postUrl() -> String {
+        return url
     }
 }

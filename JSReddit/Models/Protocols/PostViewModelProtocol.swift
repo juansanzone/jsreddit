@@ -15,4 +15,5 @@ import Foundation
     func imageUrl() -> String
     func postText() -> String
     func commentsCount() -> Int
+    func postUrl() -> String
 }

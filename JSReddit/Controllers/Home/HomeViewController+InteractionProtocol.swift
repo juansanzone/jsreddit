@@ -11,6 +11,7 @@ import UIKit
 // MARK: User Interaction protocol.
 // Handler for user actions.
 extension HomeViewController: UserInteractionProtocol {
+
     // Dismiss a post.
     func shouldDismissPost(_ post: PostViewModelProtocol) {
         if let postIndex = viewModel.getPostIndex(post) {
@@ -48,5 +49,12 @@ extension HomeViewController: UserInteractionProtocol {
     // User refresh list.
     func shouldRefreshList() {
         getRemotePosts()
+    }
+
+    // When the user tap on list image. Open url.
+    func shouldOpenUrl(url: String) {
+        if let urlToOpen = URL(string: url) {
+            UIApplication.shared.open(urlToOpen)
+        }
     }
 }

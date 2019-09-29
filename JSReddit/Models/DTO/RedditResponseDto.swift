@@ -34,4 +34,5 @@ struct RedditPostDto: Codable {
     let num_comments: Int
     let thumbnail: String
     let created: Double
+    let url: String
 }
