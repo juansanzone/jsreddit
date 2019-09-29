@@ -11,6 +11,7 @@ import Foundation
 class PostsViewModel: NSObject {
     private var posts: [PostViewModelProtocol] = [PostViewModelProtocol]()
     private let postService = RedditPostsService()
+    private var shouldGetNextPage: Bool = true
 }
 
 // Network calls.
@@ -27,15 +28,21 @@ extension PostsViewModel {
     }
 
     func nextPage(success: ((Bool)->Void)? = nil) {
-        postService.getNextPage { [weak self] remoteResponse in
-            for remotePost in remoteResponse {
-                self?.posts.append(remotePost)
+        if shouldGetNextPage {
+            shouldGetNextPage = false
+            postService.getNextPage { [weak self] remoteResponse in
+                for remotePost in remoteResponse {
+                    self?.posts.append(remotePost)
+                }
+                if remoteResponse.count > 0 {
+                    self?.shouldGetNextPage = true
+                    success?(true)
+                } else {
+                    success?(false)
+                }
             }
-            if remoteResponse.count > 0 {
-                success?(true)
-            } else {
-                success?(false)
-            }
+        } else {
+            success?(false)
         }
     }
 }
@@ -57,6 +64,11 @@ extension PostsViewModel {
 
     func hasPosts() -> Bool {
         return getPostsCount() > 0
+    }
+
+    func shouldLoadNextPage(_ index: Int) -> Bool {
+        let nextPageThreshold: Int = 4
+        return index == getPostsCount() - nextPageThreshold
     }
 }
 

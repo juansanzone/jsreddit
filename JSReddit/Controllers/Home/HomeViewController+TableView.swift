@@ -15,6 +15,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if viewModel.shouldLoadNextPage(indexPath.row) {
+            getNextPage()
+        }
+
         if let targetCell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.reuseIdentifier, for: indexPath) as? PostTableViewCell {
             let targetPost = viewModel.getPosts()[indexPath.row]
             targetCell.setupCell(targetPost)

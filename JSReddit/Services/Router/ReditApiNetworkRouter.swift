@@ -10,7 +10,7 @@ import Foundation
 
 enum ReditApiNetworkRouter {
     static let initialLimit: Int = 10
-    static let limitPerPage: Int = 5
+    static let limitPerPage: Int = 4
 
     case getTopPosts
     case getNextPage(String)

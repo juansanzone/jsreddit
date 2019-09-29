@@ -66,9 +66,9 @@ internal extension HomeViewController {
     }
 
     func getNextPage() {
-        viewModel.nextPage { success in
+        viewModel.nextPage { [weak self] success in
             if success {
-                self.postsTableView.reloadData()
+                self?.postsTableView.reloadData()
             }
         }
     }
