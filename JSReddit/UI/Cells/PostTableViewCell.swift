@@ -29,12 +29,13 @@ final class PostTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         postImage.image = nil
+        clearColors()
     }
 }
 
 // MARK: Public methods.
 extension PostTableViewCell {
-    func setupCell(_ viewModel: PostViewModelProtocol) {
+    func setupCell(_ viewModel: PostViewModelProtocol, targetIdToSelect: String?) {
         model = viewModel
         postImage.contentMode = .scaleAspectFill
         postImage.setRemoteImage(imageUrl: viewModel.imageUrl())
@@ -43,6 +44,11 @@ extension PostTableViewCell {
         timeAgoLabel.text = viewModel.timeAgo()
         postText.text = viewModel.postText()
         commentsCountLabel.text = "\(viewModel.commentsCount()) comments"
+        if let toSelectedId = targetIdToSelect, viewModel.postId() == toSelectedId {
+            selectedFontColors()
+        } else {
+            clearColors()
+        }
     }
 
     func setUserInteractionProtocol( _ iProtocol: UserInteractionProtocol) {
@@ -51,6 +57,19 @@ extension PostTableViewCell {
 
     func hideUnReadIndicator() {
         unReadIndicator.isHidden = true
+    }
+}
+
+// MARK: Privates
+private extension PostTableViewCell {
+    private func selectedFontColors() {
+        backgroundColor = .blue
+        postText.textColor = .red
+    }
+
+    private func clearColors() {
+        backgroundColor = .black
+        postText.textColor = .white
     }
 }
 

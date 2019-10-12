@@ -56,12 +56,21 @@ private extension HomeViewController {
 internal extension HomeViewController {
     func getRemotePosts() {
         viewModel.fetchPosts { [weak self] success in
+
+            guard let weakSelf = self else { return }
+
             if success {
-                self?.pullToRefresh.endRefreshing()
-                self?.postsTableView.reloadData()
+                weakSelf.pullToRefresh.endRefreshing()
+                weakSelf.postsTableView.reloadData()
             }
-            self?.activityIndicator.stopAnimating()
-            self?.resolveEmptyState()
+
+            // TODO: Juan
+            if let firstPost = weakSelf.viewModel.getPosts().first {
+                weakSelf.shouldOpenDetail(firstPost)
+            }
+
+            weakSelf.activityIndicator.stopAnimating()
+            weakSelf.resolveEmptyState()
         }
     }
 
