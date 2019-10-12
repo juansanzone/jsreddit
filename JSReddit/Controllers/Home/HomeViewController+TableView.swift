@@ -21,7 +21,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
         if let targetCell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.reuseIdentifier, for: indexPath) as? PostTableViewCell {
             let targetPost = viewModel.getPosts()[indexPath.row]
-            targetCell.setupCell(targetPost)
+            targetCell.setupCell(targetPost, targetIdToSelect: viewModel.lastPostIdSelected)
             targetCell.setUserInteractionProtocol(self)
             return targetCell
         }
@@ -39,6 +39,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             targetCell.hideUnReadIndicator()
         }
         let targetPost = viewModel.getPosts()[indexPath.row]
+        viewModel.lastPostIdSelected = targetPost.postId()
+
+        tableView.reloadData()
+        
         shouldOpenDetail(targetPost)
     }
 }

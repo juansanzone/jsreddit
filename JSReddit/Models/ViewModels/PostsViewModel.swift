@@ -12,6 +12,7 @@ class PostsViewModel: NSObject {
     private var posts: [PostViewModelProtocol] = [PostViewModelProtocol]()
     private let postService = RedditPostsService()
     private var shouldGetNextPage: Bool = true
+    var lastPostIdSelected: String?
 }
 
 // Network calls.
