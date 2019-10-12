@@ -64,7 +64,6 @@ internal extension HomeViewController {
                 weakSelf.postsTableView.reloadData()
             }
 
-            // TODO: Juan
             if let firstPost = weakSelf.viewModel.getPosts().first {
                 weakSelf.shouldOpenDetail(firstPost)
             }
